@@ -63,18 +63,19 @@ class Inventory:
                 raise ValueError("user_id must be an integer")
             if count is None:
                 raise ValueError("count cannot be None")
-            
+
             headers = {".ROBLOSECURITY": self.auth_token} if self.auth_token else {}
             req = requests.get(
                 f"https://apis.roblox.com/game-passes/v1/users/{user_id}/game-passes?count={count}",
                 headers=headers
-            )
+                )
             req.raise_for_status()
             response = req.json()
-            return response[catagory] if response.get("data") else None
-        except requests.RequestException as e:
-            return {"error": f"Failed to fetch outfit thumbnail: {str(e)}"}
-        except (KeyError, IndexError, ValueError) as e:
-            return {"error": f"Invalid input or response: {str(e)}"}
+
+            return response.get("gamePasses", [])
+        except Exception as e:
+            print(f"error fetching gamepasses: {e}")
+            return None
+
     
 
