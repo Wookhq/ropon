@@ -25,7 +25,7 @@ plus; goofy document
             - [ ] inventory
                 - [X] category search (pretty useless)
                 - [X] gamepass
-                - [ ] badges
+                - [X] badges
                 - [ ] emotes
                 - [ ] general assets (UGC + accessories + stuff)
             - [X] decs, username, currently wearing

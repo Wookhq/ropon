@@ -24,6 +24,7 @@ games_info = pg.get_games_info(user_id, auth_token=auth_token)
 wearing = po.currently_wearing(user_id, auth_token=auth_token)
 outfits = po.all_outfit(user_id,auth_token=auth_token)
 gamepasses = inv.get_user_gamepass(user_id, count=10 ,auth_token=auth_token)
+badges = inv.get_user_badges(user_id, count=10, auth_token=auth_token)
 
 
 print("Player Info:", json.dumps(player_info, indent=2))
@@ -31,6 +32,7 @@ print("Player Info:", json.dumps(player_info, indent=2))
 print("Currently Wearing:", json.dumps(wearing, indent=2))
 print("All outfits:", json.dumps(outfits, indent=2))
 print("Player gamepass inv : ", json.dumps(gamepasses, indent=2))
+print("Player badges : ", json.dumps(gamepasses, indent=2))
 
 
 random_outfit = random.choice(outfits["data"])["id"] if outfits.get("data") else None
