@@ -5,6 +5,9 @@ from ropon.apis.thumbnails.avatar import RenderAvatar
 from ropon.apis.player.inventory import Inventory
 import json
 import random
+from dotenv import load_env
+
+load_env()
 
 pl = Player()
 pg = PlayerGamesCreation()

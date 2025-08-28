@@ -55,23 +55,23 @@ class Inventory:
             return {"error" : "You cant view this player profile."}
         
     @with_auth_token
-    def get_user_categoriess(self, user_id: int | None, thumbnail_size: Literal["48x48", "50x50", "60x60", "75x75", "100x100", "150x150", "180x180", "352x352", "420x420", "720x720"], **kwargs):
+    def get_user_gamepass(self, user_id: int | None, count: int | None, **kwargs):
         try:
-            if thumbnail_size not in ["48x48", "50x50", "60x60", "75x75", "100x100", "150x150", "180x180", "352x352", "420x420", "720x720"]:
-                raise ValueError("thumbnail_size must be 48x48, 50x50, 60x60, 75x75, 100x100, 150x150, 180x180, 352x352, 420x420, 720x720")
             if user_id is None:
                 raise ValueError("user_id cannot be None")
             if not isinstance(user_id, int):
                 raise ValueError("user_id must be an integer")
+            if count is None:
+                raise ValueError("count cannot be None")
             
             headers = {".ROBLOSECURITY": self.auth_token} if self.auth_token else {}
             req = requests.get(
-                f"https://thumbnails.roblox.com/v1/users/avatar-headshot?userIds={user_id}&size={thumbnail_size}&format=Png&isCircular=false",
+                f"https://apis.roblox.com/game-passes/v1/users/{user_id}/game-passes?count={count}",
                 headers=headers
             )
             req.raise_for_status()
             response = req.json()
-            return response["data"][0]["imageUrl"] if response.get("data") else None
+            return response[catagory] if response.get("data") else None
         except requests.RequestException as e:
             return {"error": f"Failed to fetch outfit thumbnail: {str(e)}"}
         except (KeyError, IndexError, ValueError) as e:

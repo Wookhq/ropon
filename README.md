@@ -23,7 +23,11 @@ plus; goofy document
         - [ ] fetch info player
             - [ ] player state (offline, online, idle, in studio, in game etc..)
             - [ ] inventory
-                - [X] category search
+                - [X] category search (pretty useless)
+                - [X] gamepass
+                - [ ] badges
+                - [ ] emotes
+                - [ ] general assets (UGC + accessories + stuff)
             - [X] decs, username, currently wearing
             - [X] old username
             - [X] outfit
