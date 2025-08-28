@@ -30,7 +30,7 @@ print("Player Info:", json.dumps(player_info, indent=2))
 # print("Games Info:", json.dumps(games_info, indent=2)) this nuke the shi
 print("Currently Wearing:", json.dumps(wearing, indent=2))
 print("All outfits:", json.dumps(outfits, indent=2))
-print("Player gamepass inv : ", gamepasses)
+print("Player gamepass inv : ", json.dumps(gamepasses, indent=2))
 
 
 random_outfit = random.choice(outfits["data"])["id"] if outfits.get("data") else None
