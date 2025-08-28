@@ -27,7 +27,7 @@ plus; goofy document
                 - [X] gamepass
                 - [X] badges
                 - [ ] emotes
-                - [ ] general assets (UGC + accessories + stuff)
+                - [X] general assets (UGC + accessories + stuff) [fetch with newer api]
             - [X] decs, username, currently wearing
             - [X] old username
             - [X] outfit
