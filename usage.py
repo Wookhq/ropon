@@ -1,8 +1,8 @@
-from ropon.apis.players.games import PlayerGamesCreation
+from ropon.apis.players.game import PlayerGamesCreation
 from ropon.apis.players.info import Player
 from ropon.apis.players.avatar import PlayerOutfit
 from ropon.apis.thumbnails.avatar import RenderAvatar
-from ropon.apis.player.inventory import Inventory
+from ropon.apis.players.inventory import Inventory
 import json
 import random
 from dotenv import load_env
