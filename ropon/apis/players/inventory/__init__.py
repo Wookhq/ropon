@@ -7,7 +7,7 @@ class Inventory:
     def __init__(self):
         self.auth_token = None
     
-    @with_auth_token()
+    @with_auth_token
     def can_view_inventory(self, user_id: int | None, **kwargs):
         try:
             if user_id is None:
