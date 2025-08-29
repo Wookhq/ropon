@@ -27,6 +27,7 @@ plus; goofy document
                 - [X] category search (pretty useless)
                 - [X] gamepass
                 - [X] badges
+                - [X] earn date of a badge
                 - [X] emotes [fetch with newer api]
                 - [X] general assets (UGC + accessories + stuff) [fetch with newer api]
             - [X] decs, username, currently wearing
@@ -50,10 +51,7 @@ plus; goofy document
     - [ ] *~~connection~~* friends stuff
         - [ ] need research
     - [ ] place/games
-        - [ ] badges
-            - [X] badge info
-            - [ ] earned or sum idk
-            - [ ] timestamp
+        - [X] badge info
         - [X] gamepass info
         - [X] get universe id
         - [ ] need more research
