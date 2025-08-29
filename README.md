@@ -51,6 +51,7 @@ plus; goofy document
         - [ ] need research
     - [ ] place/games
         - [ ] badges
+            - [X] badge info
             - [ ] earned or sum idk
             - [ ] timestamp
         - [X] gamepass info

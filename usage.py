@@ -7,6 +7,7 @@ from ropon.apis.players.inventory import Inventory
 from ropon.apis.thumbnails.assets import RenderAsset
 from ropon.apis.game.universe import Universe
 from ropon.apis.game.gamepass import GameGamePass
+from ropon.apis.game.badges import GameBadge
 import json
 import os
 import random
@@ -24,9 +25,10 @@ inv = Inventory()
 uni = Universe()
 rg = RenderGame()
 ggp = GameGamePass()
+gb = GameBadge()
 
 user_ids = [3935821483, 1, 3, 3935821483, 4241015406, 5075705900]
-
+badge_id = 4479862411202497
 asset_id = 82582133768864
 place_id = 138837502355157
 auth_token = os.getenv("ROBLOXTOKEN")
@@ -62,6 +64,7 @@ def menu():
     print("11. headshot + bust")
     print("12 gamepass image")
     print("13 gamepass info")
+    print("14 badge info")
     print("0. exit")
 
 
@@ -159,6 +162,9 @@ while True:
             else:
                 print("no gamepasses for this user")
             
+        elif choice == "14":
+            badge = gb.get_badge_info(badge_id, count=10, auth_token=auth_token)
+            print("Badge info", json.dumps(badge, indent=2))
 
         else:
             print("invalid option")
