@@ -43,9 +43,9 @@ plus; goofy document
 
 | feature                  | status | notes / endpoint URL                                        |
 | ------------------------ | ------ | ----------------------------------------------------------- |
-| badges                   | ⬜     | `thumbnails.roblox.com/v1/badges/icons?badgeIds={ids}`      |
-| bundle                   | ⬜     | `thumbnails.roblox.com/v1/bundles/icons?bundleIds={ids}`    |
-| dev products             | ⬜     | via `catalog.roblox.com` or `assetdelivery.roblox.com` APIs |
+| badges                   | ✅     | `thumbnails.roblox.com/v1/badges/icons?badgeIds={ids}`      |
+| bundle                   | ❓     | `thumbnails.roblox.com/v1/bundles/icons?bundleIds={ids}`    |
+| dev products             | ❓     | via `catalog.roblox.com` or `assetdelivery.roblox.com` APIs |
 | gamepasses               | ✅     | `thumbnails.roblox.com/v1/game-passes?gamePassIds={ids}`    |
 | games                    | ✅     | `thumbnails.roblox.com/v1/games/icons?universeIds={ids}`    |
 | catalog item             | ✅     | `thumbnails.roblox.com/v1/assets?assetIds={id}`             |

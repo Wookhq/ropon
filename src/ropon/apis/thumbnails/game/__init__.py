@@ -81,3 +81,28 @@ class RenderGame:
             return {"error": f"Failed to fetch gamepass thumbnail: {e}"}
         except (KeyError, IndexError, ValueError) as e:
             return {"error": f"Invalid input or response: {str(e)}"}
+        
+    @with_auth_token
+    def render_badge(self, badge_id: int | None, thumbnail_size: Literal["150x150"], formattype: Literal["Png", "Jpeg", "Webp"], **kwargs):
+        try:
+            if thumbnail_size not in ["150x150"]:
+                raise ValueError("thumbnail_size can only be 150x150")
+            if formattype not in ["Png", "Jpeg", "Webp"]:
+                raise ValueError("formattype must be Png, Jpeg, Webp")
+            if badge_id is None:
+                raise ValueError("badge_id cannot be None")
+            if not isinstance(badge_id, int):
+                raise ValueError("badge_id must be an integer")
+
+            headers = {".ROBLOSECURITY": self.auth_token} if self.auth_token else {}
+            req = requests.get(
+                f"https://thumbnails.roblox.com/v1/badges/icons?badgeIds={badge_id}&size={thumbnail_size}&format={formattype}",
+                headers=headers
+            )
+            req.raise_for_status()
+            response = req.json()
+            return response["data"][0]["imageUrl"]
+        except requests.RequestException as e:
+            return {"error": f"Failed to fetch gamepass thumbnail: {e}"}
+        except (KeyError, IndexError, ValueError) as e:
+            return {"error": f"Invalid input or response: {str(e)}"}
