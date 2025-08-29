@@ -37,6 +37,7 @@ plus; goofy document
             - [ ] games 
             - [ ] catalog item
             - [X] outfit, headshot
+            - [X] headshot bust
         - [ ] fetch catalog item
             - [ ] favorites
             - [ ] item details

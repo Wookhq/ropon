@@ -48,3 +48,7 @@ else:
 
 thumbnail_headshot = ra.render_headshot(user_id=user_id, thumbnail_size="150x150", auth_token=auth_token)
 print("Headshot:", thumbnail_headshot)
+
+
+thumbnail_headshot_bust = ra.render_headshot_bust(user_id=user_id, thumbnail_size="150x150", auth_token=auth_token)
+print("Headshot bust:", thumbnail_headshot_bust) # like no emote or custom stuff like that if you are wondering
