@@ -20,7 +20,7 @@ inv = Inventory()
 user_id = 3935821483
 auth_token = os.getenv("ROBLOXTOKEN")
 
-player_info = pl.get_player_info(user_id, auth_token=auth_token)
+player_info = pl.get_player_info(user_id,useroproxy=True , auth_token=auth_token) # roproxy! 
 games_info = pg.get_games_info(user_id, auth_token=auth_token)
 wearing = po.currently_wearing(user_id, auth_token=auth_token)
 outfits = po.all_outfit(user_id,auth_token=auth_token)
