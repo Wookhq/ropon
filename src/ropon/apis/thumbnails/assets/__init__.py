@@ -21,7 +21,7 @@ class RenderAsset:
 
             headers = {".ROBLOSECURITY": self.auth_token} if self.auth_token else {}
             req = requests.get(
-                f"https://thumbnails.roblox.com/v1/assets?assetIds={item_id}&returnPolicy=PlaceHolder&size={formattype}&format=Png&isCircular=false",
+                f"https://thumbnails.roblox.com/v1/assets?assetIds={item_id}&returnPolicy=PlaceHolder&size={thumbnail_size}&format={formattype}&isCircular=false",
                 headers=headers
             )
             req.raise_for_status()
