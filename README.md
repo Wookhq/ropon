@@ -33,23 +33,24 @@ plus; goofy document
             - [X] old username
             - [X] outfit
             - [X] created games
-        - [ ]  thumbnails (render stuff)
-            - [ ] games 
-            - [ ] catalog item
-            - [X] outfit, headshot
-            - [X] headshot bust
-        - [ ] fetch catalog item
-            - [ ] favorites
-            - [ ] item details
-            - [ ] bundle stuff
-        - [ ] *~~connection~~* friends stuff
-            - [ ] need research
+    - [ ]  thumbnails (render stuff)
+        - [ ] games 
+        - [X] catalog item (render it with RenderAsset() )
+        - [X] model [render it with RenderAsset()]
+        - [X] outfit, headshot
+        - [X] headshot bust
+    - [ ] fetch catalog item
+        - [ ] favorites
+        - [ ] item details
+        - [ ] bundle stuff
+    - [ ] *~~connection~~* friends stuff
+        - [ ] need research
     - [ ] place/games
         - [ ] need research
     - [ ] group
         - [ ] need research
 - [ ] creator idk thing?
-    - [ ] toolbox search
+    - [ ] toolbox fetch
         - [ ] sound
         - [ ] model
         - [ ] plugin
