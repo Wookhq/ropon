@@ -6,7 +6,7 @@ from ropon.apis.thumbnails.game import RenderGame
 from ropon.apis.players.inventory import Inventory
 from ropon.apis.thumbnails.assets import RenderAsset
 from ropon.apis.game.universe import Universe
-from ropon.apis.game.gamepass import GameGamePass
+from ropon.apis.gamepass import GameGamePass
 from ropon.apis.game.badges import GameBadge
 import json
 import os

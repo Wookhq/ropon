@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="129.823" height="129.823" viewBox="0 0 129.823 129.823" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <clipPath id="clip_path_1">
+      <rect width="129.823" height="129.823" />
+    </clipPath>
+  </defs>
+  <g clip-path="url(#clip_path_1)" transform="matrix(0.966 0.259 -0.259 0.966 27.435 0)">
+    <rect width="106" height="106" fill="#FFFFFF" fill-rule="evenodd" />
+    <g transform="matrix(1 -0 0 1 0 -0.088)">
+      <rect width="106" height="106" fill="#0080FF" fill-rule="evenodd" />
+      <rect width="96" height="96" fill="#46A3FF" fill-rule="evenodd" transform="translate(5 5)" />
+      <rect width="88" height="88" fill="#66B3FF" fill-rule="evenodd" transform="translate(5 13)" />
+      <rect width="78" height="78" fill="#89C4FF" fill-rule="evenodd" transform="translate(5 23)" />
+      <rect width="66" height="66" fill="#B9DCFF" fill-rule="evenodd" transform="translate(5 35)" />
+    </g>
+  </g>
+</svg>
