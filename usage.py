@@ -51,13 +51,14 @@ def menu():
     print("2. player games")
     print("3. currently wearing")
     print("4. all outfits")
-    print("5. gamepasses")
-    print("6. badges")
-    print("7. decals")
+    print("5. gamepasses inv")
+    print("6. badges inv")
+    print("7. decals inv")
     print("8. render asset thumbnail")
     print("9. universe + game icons/thumbnails")
     print("10. random outfit render")
     print("11. headshot + bust")
+    print("12 gamepass image")
     print("0. exit")
 
 
@@ -127,6 +128,23 @@ while True:
             bust = ra.render_headshot_bust(user_id, "150x150", formattype="Png", auth_token=auth_token)
             print("headshot:", headshot)
             print("headshot bust:", bust)
+        
+        elif choice == "12":
+            gamepasses = inv.get_user_gamepass(user_id, count=10, auth_token=auth_token)
+            if gamepasses:
+                random_gp = random.choice(gamepasses)
+                thumb = rg.render_gamepass(
+                    random_gp["gamePassId"],
+                    thumbnail_size="150x150",
+                    formattype="Png",
+                    auth_token=auth_token
+                )
+                print("random gamepass:", random_gp["name"])
+                print("thumbnail:", thumb)
+            else:
+                print("no gamepasses for this user")
+
+            
 
         else:
             print("invalid option")

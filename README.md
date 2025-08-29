@@ -37,7 +37,7 @@ plus; goofy document
         - [ ] badges
         - [ ] bundle
         - [ ] dev products
-        - [ ] gamepasses
+        - [X] gamepasses
         - [X] games
         - [X] catalog item [render it with RenderAsset()]
         - [X] model creator store [render it with RenderAsset()]
