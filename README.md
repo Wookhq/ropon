@@ -35,8 +35,8 @@ plus; goofy document
             - [X] created games
     - [ ]  thumbnails (render stuff)
         - [ ] games 
-        - [X] catalog item (render it with RenderAsset() )
-        - [X] model [render it with RenderAsset()]
+        - [X] catalog item [render it with RenderAsset()]
+        - [X] model creator store [render it with RenderAsset()]
         - [X] outfit, headshot
         - [X] headshot bust
     - [ ] fetch catalog item
