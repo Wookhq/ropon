@@ -69,7 +69,7 @@ plus; goofy document
 | feature           | status | notes / endpoint URL                                          |
 | ----------------- | ------ | ------------------------------------------------------------- |
 | friends list      | ⬜     | `friends.roblox.com/v1/users/{userId}/friends`                |
-| friend requests   | ⬜     | `friends.roblox.com/v1/user/friend-requests`                  |
+| friend requests   | ❓     | `friends.roblox.com/v1/user/friend-requests`                  |
 | followers         | ⬜     | `friends.roblox.com/v1/users/{userId}/followers`              |
 | followings        | ⬜     | `friends.roblox.com/v1/users/{userId}/followings`             |
 | friendship status | ❓     | `friends.roblox.com/v1/users/{userId}/friends/{targetUserId}` |
