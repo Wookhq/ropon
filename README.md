@@ -53,6 +53,7 @@ plus; goofy document
         - [ ] badges
             - [ ] earned or sum idk
             - [ ] timestamp
+        - [X] gamepass info
         - [X] get universe id
         - [ ] need more research
     - [ ] group

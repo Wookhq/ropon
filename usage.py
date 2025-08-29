@@ -6,6 +6,7 @@ from ropon.apis.thumbnails.game import RenderGame
 from ropon.apis.players.inventory import Inventory
 from ropon.apis.thumbnails.assets import RenderAsset
 from ropon.apis.game.universe import Universe
+from ropon.apis.game.gamepass import GameGamePass
 import json
 import os
 import random
@@ -22,8 +23,9 @@ ras = RenderAsset()
 inv = Inventory()
 uni = Universe()
 rg = RenderGame()
+ggp = GameGamePass()
 
-user_ids = [3935821483, 1234567890, 987654321]
+user_ids = [3935821483, 1, 3, 3935821483, 4241015406, 5075705900]
 
 asset_id = 82582133768864
 place_id = 138837502355157
@@ -59,6 +61,7 @@ def menu():
     print("10. random outfit render")
     print("11. headshot + bust")
     print("12 gamepass image")
+    print("13 gamepass info")
     print("0. exit")
 
 
@@ -143,7 +146,18 @@ while True:
                 print("thumbnail:", thumb)
             else:
                 print("no gamepasses for this user")
-
+        
+        elif choice == "13":
+            gamepasses = inv.get_user_gamepass(user_id, count=10, auth_token=auth_token)
+            if gamepasses:
+                random_gp = random.choice(gamepasses)
+                info = ggp.get_gamepass_info(
+                    random_gp["gamePassId"],
+                    auth_token=auth_token
+                )
+                print("gamepass info:", json.dumps(info, indent=2))
+            else:
+                print("no gamepasses for this user")
             
 
         else:
