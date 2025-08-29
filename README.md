@@ -20,8 +20,8 @@ plus; goofy document
 
 - [ ] player side (website thing ok)
     - [ ] players stuff
-        - [ ] fetch info player
-            - [ ] player state (offline, online, idle, in studio, in game etc..)
+        - [X] fetch info player
+            - [X] player state (offline, online, idle, in studio, in game etc..) [ Roproxy and not Roproxy ]
             - [X] inventory
                 - [X] category search (pretty useless)
                 - [X] gamepass
