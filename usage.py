@@ -44,7 +44,7 @@ print("Player badges : ", json.dumps(badges, indent=2))
 random_outfit = random.choice(outfits["data"])["id"] if outfits.get("data") else None
 
 if random_outfit:
-    thumbnail_outfit = ra.render_outfit(random_outfit, "150x150", auth_token=auth_token)
+    thumbnail_outfit = ra.render_outfit(random_outfit, "150x150", formanttype="Png", auth_token=auth_token)
     print("Thumbnail Outfit:", thumbnail_outfit)
 else:
     print("No outfits available")
