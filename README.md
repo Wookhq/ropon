@@ -35,6 +35,10 @@ plus; goofy document
             - [X] created games
     - [ ]  thumbnails (render stuff)
         - [ ] games 
+        - [ ] badges
+        - [ ] bundle
+        - [ ] dev products
+        - [ ] gamepasses
         - [X] catalog item [render it with RenderAsset()]
         - [X] model creator store [render it with RenderAsset()]
         - [X] outfit, headshot
@@ -46,7 +50,10 @@ plus; goofy document
     - [ ] *~~connection~~* friends stuff
         - [ ] need research
     - [ ] place/games
-        - [ ] need research
+        - [ ] badges
+            - [ ] earned or sum idk
+            - [ ] timestamp
+        - [ ] need more research
     - [ ] group
         - [ ] need research
 - [ ] creator idk thing?
