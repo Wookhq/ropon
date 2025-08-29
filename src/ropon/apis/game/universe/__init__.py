@@ -19,7 +19,7 @@ class Universe:
                 f"https://apis.roblox.com/universes/v1/places/{place_id}/universe",
                 headers=headers
             )
-            rqe.raise_for_status()
+            req.raise_for_status()
             response = req.json()
             return response["universeId"]
         except requests.RequestException as e:
