@@ -4,6 +4,7 @@ from ropon.apis.players.avatar import PlayerOutfit
 from ropon.apis.thumbnails.avatar import RenderAvatar
 from ropon.apis.players.inventory import Inventory
 from ropon.apis.thumbnails.assets import RenderAsset
+from ropon.apis.game.universe import Universe
 import json
 import os
 import random
@@ -17,10 +18,12 @@ po = PlayerOutfit()
 ra = RenderAvatar()
 ras = RenderAsset()
 inv = Inventory()
+uni = Universe()
 
 # Fetch data with auth_token
 user_id = 3935821483
 asset_id = 82582133768864
+place_id = 138837502355157
 auth_token = os.getenv("ROBLOXTOKEN")
 
 player_info = pl.get_player_info(user_id,useroproxy=True , auth_token=auth_token) # roproxy! 
@@ -31,6 +34,7 @@ gamepasses = inv.get_user_gamepass(user_id, count=10 ,auth_token=auth_token)
 badges = inv.get_user_badges(user_id, count=10, auth_token=auth_token)
 decals = inv.get_user_item(user_id, 13, count=10, auth_token=auth_token)
 assetthumbnail = ras.render_assets(asset_id, "150x150", auth_token=auth_token, formanttype="Png")
+universe_id = uni.get_game_universeId(place_id)
 
 
 print("Player Info:", json.dumps(player_info, indent=2))
@@ -39,6 +43,7 @@ print("Currently Wearing:", json.dumps(wearing, indent=2))
 print("All outfits:", json.dumps(outfits, indent=2))
 print("Player gamepass inv : ", json.dumps(gamepasses, indent=2))
 print("Player badges : ", json.dumps(badges, indent=2))
+print("Universe ID for grace :", universe_id)
 
 
 random_outfit = random.choice(outfits["data"])["id"] if outfits.get("data") else None
