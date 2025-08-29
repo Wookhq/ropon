@@ -38,7 +38,7 @@ print("Player Info:", json.dumps(player_info, indent=2))
 print("Currently Wearing:", json.dumps(wearing, indent=2))
 print("All outfits:", json.dumps(outfits, indent=2))
 print("Player gamepass inv : ", json.dumps(gamepasses, indent=2))
-print("Player badges : ", json.dumps(gamepasses, indent=2))
+print("Player badges : ", json.dumps(badges, indent=2))
 
 
 random_outfit = random.choice(outfits["data"])["id"] if outfits.get("data") else None
