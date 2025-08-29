@@ -2,6 +2,7 @@
 
 A really simple and **very cool™** roblox api helper lib
 
+This only fetch stuff. this lib cant modify user account.
 
 Usage :
 
@@ -37,10 +38,12 @@ plus; goofy document
             - [ ] catalog item
             - [X] outfit, headshot
         - [ ] fetch catalog item
-            - [ ] need research
+            - [ ] favorites
+            - [ ] item details
+            - [ ] bundle stuff
         - [ ] *~~connection~~* friends stuff
             - [ ] need research
-    - [ ] place
+    - [ ] place/games
         - [ ] need research
     - [ ] group
         - [ ] need research
