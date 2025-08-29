@@ -20,7 +20,7 @@ plus; goofy document
 # TODO LIST
 
 - [ ] player side (website thing ok)
-    - [ ] players stuff
+    - [X] players stuff
         - [X] fetch info player
             - [X] player state (offline, online, idle, in studio, in game etc..) [ Roproxy and not Roproxy ]
             - [X] inventory
