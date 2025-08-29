@@ -18,6 +18,10 @@ plus; goofy document
 
 # TODO LIST
 
+✅ : done ez
+⬜ : undone
+❓ : no idea / tf is this
+
 ## player side (website chill)
 
 | feature                                   | status | notes / endpoint URL                                                                              |
@@ -68,7 +72,7 @@ plus; goofy document
 | friend requests   | ⬜     | `friends.roblox.com/v1/user/friend-requests`                  |
 | followers         | ⬜     | `friends.roblox.com/v1/users/{userId}/followers`              |
 | followings        | ⬜     | `friends.roblox.com/v1/users/{userId}/followings`             |
-| friendship status | ⬜     | `friends.roblox.com/v1/users/{userId}/friends/{targetUserId}` |
+| friendship status | ❓     | `friends.roblox.com/v1/users/{userId}/friends/{targetUserId}` |
 
 ---
 
@@ -112,5 +116,5 @@ plus; goofy document
 | search audio / sounds   | ⬜     | `develop.roblox.com/v1/assets?assetType=Audio&limit=30`             |
 | search meshes / decals  | ⬜     | `develop.roblox.com/v1/assets?assetType=Decal&limit=30`             |
 | asset delivery (file)   | ⬜     | `assetdelivery.roblox.com/v1/asset?id={assetId}`                    |
-| publish / upload assets | ⬜     | `publish.roblox.com/v1/assets/upload`                               |
+| publish / upload assets | ❓     | `publish.roblox.com/v1/assets/upload`                               |
 | content store access    | ⬜     | `contentstore.roblox.com/v1/content/{hash}`                         |
