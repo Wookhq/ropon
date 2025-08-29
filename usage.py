@@ -3,6 +3,7 @@ from ropon.apis.players.info import Player
 from ropon.apis.players.avatar import PlayerOutfit
 from ropon.apis.thumbnails.avatar import RenderAvatar
 from ropon.apis.players.inventory import Inventory
+from ropon.apis.thumbnails.assets import RenderAsset
 import json
 import os
 import random
@@ -14,10 +15,12 @@ pl = Player()
 pg = PlayerGamesCreation()
 po = PlayerOutfit()
 ra = RenderAvatar()
+ras = RenderAsset()
 inv = Inventory()
 
 # Fetch data with auth_token
 user_id = 3935821483
+asset_id = 82582133768864
 auth_token = os.getenv("ROBLOXTOKEN")
 
 player_info = pl.get_player_info(user_id,useroproxy=True , auth_token=auth_token) # roproxy! 
@@ -27,6 +30,7 @@ outfits = po.all_outfit(user_id,auth_token=auth_token)
 gamepasses = inv.get_user_gamepass(user_id, count=10 ,auth_token=auth_token)
 badges = inv.get_user_badges(user_id, count=10, auth_token=auth_token)
 decals = inv.get_user_item(user_id, 13, count=10, auth_token=auth_token)
+assetthumbnail = ras.render_assets(asset_id, "150x150", auth_token=auth_token, formanttype="Png")
 
 
 print("Player Info:", json.dumps(player_info, indent=2))
@@ -46,9 +50,11 @@ else:
     print("No outfits available")
 
 
-thumbnail_headshot = ra.render_headshot(user_id=user_id, thumbnail_size="150x150", auth_token=auth_token)
+thumbnail_headshot = ra.render_headshot(user_id=user_id, thumbnail_size="150x150", formanttype="Png", auth_token=auth_token)
 print("Headshot:", thumbnail_headshot)
 
 
-thumbnail_headshot_bust = ra.render_headshot_bust(user_id=user_id, thumbnail_size="150x150", auth_token=auth_token)
+thumbnail_headshot_bust = ra.render_headshot_bust(user_id=user_id, thumbnail_size="150x150", formanttype="Png", auth_token=auth_token)
 print("Headshot bust:", thumbnail_headshot_bust) # like no emote or custom stuff like that if you are wondering
+
+print("Asset thumbnail :", assetthumbnail)
