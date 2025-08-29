@@ -16,7 +16,7 @@ class Universe:
             
             headers = {".ROBLOSECURITY": self.auth_token} if self.auth_token else {}
             req = requests.get(
-                f"https://apis.roblox.com/universes/v1/places/{placeId}/universe",
+                f"https://apis.roblox.com/universes/v1/places/{place_id}/universe",
                 headers=headers
             )
             rqe.raise_for_status()
