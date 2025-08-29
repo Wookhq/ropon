@@ -1,0 +1,11 @@
+[project]
+name = "ropon"
+version = "0.1.0"
+description = "A really simple and **very cool™** roblox api helper lib"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

@@ -1,1 +1,0 @@
-# gurt is good
