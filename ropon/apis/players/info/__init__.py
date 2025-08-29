@@ -15,13 +15,29 @@ class Player:
                 f"https://users.roblox.com/v1/users/{user_id}/username-history?limit={history_usr_limit}&sortOrder=Asc",
                 headers=headers
             )
+            body ={ "userIds": [user_id]  }
+            player_state = requests.post(
+                f"https://presence.roproxy.com/v1/presence/users",
+                json=body
+            )
 
+            player_state.raise_for_status()
             geninfo.raise_for_status()
             username_history_response.raise_for_status()
 
+            data = player_state.json()
+            presence =data["userPresences"][0]["userPresenceType"]
+            mapping = {
+                    0: "offline",
+                    1: "online",
+                    2: "in-game",
+                    3: "in-studio"
+                }
+            
             return {
                 "userinfo": geninfo.json(),
-                "oldusernames": username_history_response.json().get("data", [])
+                "oldusernames": username_history_response.json().get("data", []),
+                "state" : mapping.get(presence, "unknown")
             }
         except requests.RequestException as e:
             return {"error": f"Failed to fetch player info: {str(e)}"}
