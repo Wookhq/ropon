@@ -2,6 +2,7 @@ from ropon.apis.players.game import PlayerGamesCreation
 from ropon.apis.players.info import Player
 from ropon.apis.players.avatar import PlayerOutfit
 from ropon.apis.thumbnails.avatar import RenderAvatar
+from ropon.apis.thumbnails.game import RenderGame
 from ropon.apis.players.inventory import Inventory
 from ropon.apis.thumbnails.assets import RenderAsset
 from ropon.apis.game.universe import Universe
@@ -19,6 +20,7 @@ ra = RenderAvatar()
 ras = RenderAsset()
 inv = Inventory()
 uni = Universe()
+rg = RenderGame()
 
 # Fetch data with auth_token
 user_id = 3935821483
@@ -35,6 +37,7 @@ badges = inv.get_user_badges(user_id, count=10, auth_token=auth_token)
 decals = inv.get_user_item(user_id, 13, count=10, auth_token=auth_token)
 assetthumbnail = ras.render_assets(asset_id, "150x150", auth_token=auth_token, formanttype="Png")
 universe_id = uni.get_game_universeId(place_id)
+thumbnail_game = rg.render_icon(universe_id)
 
 
 print("Player Info:", json.dumps(player_info, indent=2))
@@ -44,6 +47,7 @@ print("All outfits:", json.dumps(outfits, indent=2))
 print("Player gamepass inv : ", json.dumps(gamepasses, indent=2))
 print("Player badges : ", json.dumps(badges, indent=2))
 print("Universe ID for grace :", universe_id)
+print("Icon game for grace :", thumbnail_game)
 
 
 random_outfit = random.choice(outfits["data"])["id"] if outfits.get("data") else None
