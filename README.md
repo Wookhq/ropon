@@ -33,12 +33,12 @@ plus; goofy document
             - [X] old username
             - [X] outfit
             - [X] created games
-    - [ ]  thumbnails (render stuff)
-        - [ ] games 
+    - [ ]  thumbnails (render stuff) 
         - [ ] badges
         - [ ] bundle
         - [ ] dev products
         - [ ] gamepasses
+        - [X] games
         - [X] catalog item [render it with RenderAsset()]
         - [X] model creator store [render it with RenderAsset()]
         - [X] outfit, headshot
