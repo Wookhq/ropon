@@ -9,6 +9,7 @@ from ropon.apis.game.universe import Universe
 import json
 import os
 import random
+import platform
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -22,48 +23,115 @@ inv = Inventory()
 uni = Universe()
 rg = RenderGame()
 
-# Fetch data with auth_token
-user_id = 3935821483
+user_ids = [3935821483, 1234567890, 987654321]
+
 asset_id = 82582133768864
 place_id = 138837502355157
 auth_token = os.getenv("ROBLOXTOKEN")
 
-player_info = pl.get_player_info(user_id,useroproxy=True , auth_token=auth_token) # roproxy! 
-games_info = pg.get_games_info(user_id, auth_token=auth_token)
-wearing = po.currently_wearing(user_id, auth_token=auth_token)
-outfits = po.all_outfit(user_id,auth_token=auth_token)
-gamepasses = inv.get_user_gamepass(user_id, count=10 ,auth_token=auth_token)
-badges = inv.get_user_badges(user_id, count=10, auth_token=auth_token)
-decals = inv.get_user_item(user_id, 13, count=10, auth_token=auth_token)
-assetthumbnail = ras.render_assets(asset_id, "150x150", auth_token=auth_token, formanttype="Png")
-universe_id = uni.get_game_universeId(place_id)
-icon_game = rg.render_icon(universe_id)
+
+def pick_user():
+    return random.choice(user_ids)
 
 
-print("Player Info:", json.dumps(player_info, indent=2))
-# print("Games Info:", json.dumps(games_info, indent=2)) this nuke the shi
-print("Currently Wearing:", json.dumps(wearing, indent=2))
-print("All outfits:", json.dumps(outfits, indent=2))
-print("Player gamepass inv : ", json.dumps(gamepasses, indent=2))
-print("Player badges : ", json.dumps(badges, indent=2))
-print("Universe ID for grace :", universe_id)
-print("Icon game for grace :", icon_game)
+def clear():
+    if platform.system() == "Windows":
+        os.system("cls")
+    else:
+        os.system("clear")
 
 
-random_outfit = random.choice(outfits["data"])["id"] if outfits.get("data") else None
-
-if random_outfit:
-    thumbnail_outfit = ra.render_outfit(random_outfit, "150x150", formanttype="Png", auth_token=auth_token)
-    print("Thumbnail Outfit:", thumbnail_outfit)
-else:
-    print("No outfits available")
+def pause():
+    input("\npress enter to continue...")
 
 
-thumbnail_headshot = ra.render_headshot(user_id=user_id, thumbnail_size="150x150", formanttype="Png", auth_token=auth_token)
-print("Headshot:", thumbnail_headshot)
+def menu():
+    print("=== ropon fetch demo ===")
+    print("1. player info")
+    print("2. player games")
+    print("3. currently wearing")
+    print("4. all outfits")
+    print("5. gamepasses")
+    print("6. badges")
+    print("7. decals")
+    print("8. render asset thumbnail")
+    print("9. universe + game icons/thumbnails")
+    print("10. random outfit render")
+    print("11. headshot + bust")
+    print("0. exit")
 
 
-thumbnail_headshot_bust = ra.render_headshot_bust(user_id=user_id, thumbnail_size="150x150", formanttype="Png", auth_token=auth_token)
-print("Headshot bust:", thumbnail_headshot_bust) # like no emote or custom stuff like that if you are wondering
+while True:
+    clear()
+    menu()
+    choice = input("choose option: ")
 
-print("Asset thumbnail :", assetthumbnail)
+    if choice == "0":
+        break
+
+    user_id = pick_user()
+
+    clear()
+    try:
+        if choice == "1":
+            data = pl.get_player_info(user_id, useroproxy=True, auth_token=auth_token)
+            print(json.dumps(data, indent=2))
+
+        elif choice == "2":
+            data = pg.get_games_info(user_id, auth_token=auth_token)
+            print(json.dumps(data, indent=2))
+
+        elif choice == "3":
+            data = po.currently_wearing(user_id, auth_token=auth_token)
+            print(json.dumps(data, indent=2))
+
+        elif choice == "4":
+            data = po.all_outfit(user_id, auth_token=auth_token)
+            print(json.dumps(data, indent=2))
+
+        elif choice == "5":
+            data = inv.get_user_gamepass(user_id, count=10, auth_token=auth_token)
+            print(json.dumps(data, indent=2))
+
+        elif choice == "6":
+            data = inv.get_user_badges(user_id, count=10, auth_token=auth_token)
+            print(json.dumps(data, indent=2))
+
+        elif choice == "7":
+            data = inv.get_user_item(user_id, 13, count=10, auth_token=auth_token)
+            print(json.dumps(data, indent=2))
+
+        elif choice == "8":
+            data = ras.render_assets(asset_id, "150x150", auth_token=auth_token, formattype="Png")
+            print("asset thumbnail:", data)
+
+        elif choice == "9":
+            universe_id = uni.get_game_universeId(place_id)
+            icon_game = rg.render_icon(universe_id, thumbnail_size="512x512", formattype="Png")
+            thumbnail_game = rg.render_thumbnail(universe_id, count=5, thumbnail_size="768x432", formattype="Png")
+            print("universe id:", universe_id)
+            print("icon:", icon_game)
+            print("thumbnails:", thumbnail_game)
+
+        elif choice == "10":
+            outfits = po.all_outfit(user_id, auth_token=auth_token)
+            if outfits.get("data"):
+                random_outfit = random.choice(outfits["data"])["id"]
+                thumb = ra.render_outfit(random_outfit, "150x150", formattype="Png", auth_token=auth_token)
+                print("random outfit thumbnail:", thumb)
+            else:
+                print("no outfits for this user")
+
+        elif choice == "11":
+            headshot = ra.render_headshot(user_id, "150x150", formattype="Png", auth_token=auth_token)
+            bust = ra.render_headshot_bust(user_id, "150x150", formattype="Png", auth_token=auth_token)
+            print("headshot:", headshot)
+            print("headshot bust:", bust)
+
+        else:
+            print("invalid option")
+
+    except Exception as e:
+        print("error:", e)
+
+    pause()
