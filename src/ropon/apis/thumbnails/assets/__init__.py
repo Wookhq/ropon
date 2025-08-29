@@ -28,7 +28,7 @@ class RenderAsset:
             response = req.json()
             return response["data"][0]["imageUrl"] if response.get("data") else None
         except requests.RequestException as e:
-            return {"error": f"Failed to fetch outfit thumbnail: {str(e)}"}
+            return {"error": f"Failed to fetch render assets: {str(e)}"}
         except (KeyError, IndexError, ValueError) as e:
             return {"error": f"Invalid input or response: {str(e)}"}
     

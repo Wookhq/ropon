@@ -74,7 +74,7 @@ class Inventory:
 
             return response.get("gamePasses", [])
         except requests.RequestException as e:
-            return {"error": f"Failed to fetch outfit thumbnail: {str(e)}"}
+            return {"error": f"Failed to fetch player inv gamepass: {str(e)}"}
         except (KeyError, IndexError, ValueError) as e:
             return {"error": f"Invalid input or response: {str(e)}"}
         
@@ -98,7 +98,7 @@ class Inventory:
 
             return response.get("data", [])
         except requests.RequestException as e:
-            return {"error": f"Failed to fetch outfit thumbnail: {str(e)}"}
+            return {"error": f"Failed to fetch player inv badges: {str(e)}"}
         except (KeyError, IndexError, ValueError) as e:
             return {"error": f"Invalid input or response: {str(e)}"}
     
@@ -122,6 +122,6 @@ class Inventory:
 
             return response.get("gamePasses", [])
         except requests.RequestException as e:
-            return {"error": f"Failed to fetch outfit thumbnail: {str(e)}"}
+            return {"error": f"Failed to fetch player inv item: {str(e)}"}
         except (KeyError, IndexError, ValueError) as e:
             return {"error": f"Invalid input or response: {str(e)}"}
