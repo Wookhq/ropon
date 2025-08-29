@@ -56,7 +56,7 @@ class PlayerConnection:
             return {"error": f"Invalid input or response: {str(e)}"}
 
     @with_auth_token
-    def get_user_followers(self, user_id: int | None,**kwargs):
+    def get_user_followings(self, user_id: int | None,**kwargs):
         try:
             if user_id is None:
                 raise ValueError("user_id cannot be None")
