@@ -101,6 +101,7 @@ plus; goofy document
 
 | feature            | status | notes / endpoint URL                                         |
 | ------------------ | ------ | ------------------------------------------------------------ |
+| group search       | ✅     | `groups.roblox.com/v1/groups/search`  cursor support         |
 | group details      | ⬜     | `groups.roblox.com/v1/groups/{groupId}`                      |
 | roles              | ⬜     | `groups.roblox.com/v1/groups/{groupId}/roles`                |
 | members by role    | ⬜     | `groups.roblox.com/v1/groups/{groupId}/roles/{roleId}/users` |
