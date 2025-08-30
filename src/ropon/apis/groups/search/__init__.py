@@ -11,7 +11,9 @@ class GroupSearch:
     def search(self, keyword: str | None, exactmatch: bool | False, count : int | None, cursor : str | None, **kwargs):
         try:
             if keyword is None:
-                raise ValueError("keyword cannot be None")          
+                raise ValueError("keyword cannot be None")
+            if not isinstance(universe_id, int):
+                raise ValueError("universe_id must be a interger")          
             if count is None:
                 raise ValueError("count cannot be None")  
             if cursor is not None:
