@@ -109,7 +109,7 @@ plus; goofy document
 | roles              | ⬜     | `groups.roblox.com/v1/groups/{groupId}/roles`                |
 | members by role    | ⬜     | `groups.roblox.com/v1/groups/{groupId}/roles/{roleId}/users` |
 | user’s groups      | ⬜     | `groups.roblox.com/v2/users/{userId}/groups/roles`           |
-| group wall posts   | ⬜     | `groups.roblox.com/v2/groups/{groupId}/wall/posts`           |
+| group wall posts   | ✅     | `groups.roblox.com/v2/groups/{groupId}/wall/posts`           |
 | group shout        | ⬜     | `groups.roblox.com/v1/groups/{groupId}/shout`                |
 | group social links | ⬜     | `groups.roblox.com/v1/groups/{groupId}/social-links`         |
 
