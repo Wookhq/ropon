@@ -8,6 +8,7 @@ from ropon.apis.thumbnails.assets import RenderAsset
 from ropon.apis.game.universe import Universe
 from ropon.apis.gamepass import GameGamePass
 from ropon.apis.game.badges import GameBadge
+from ropon.apis.game.info import GameInfo
 import json
 import os
 import random
@@ -26,11 +27,12 @@ uni = Universe()
 rg = RenderGame()
 ggp = GameGamePass()
 gb = GameBadge()
+gi = GameInfo()
 
 user_ids = [3935821483, 1, 3, 3935821483, 4241015406, 5075705900]
 badge_id = 4479862411202497
 asset_id = 82582133768864
-place_id = 138837502355157
+place_id = 10449761463
 auth_token = os.getenv("ROBLOXTOKEN")
 
 
@@ -65,6 +67,7 @@ def menu():
     print("12 gamepass image")
     print("13 gamepass info")
     print("14 badge info")
+    print("15 game's gamepass")
     print("0. exit")
 
 
@@ -165,6 +168,12 @@ while True:
         elif choice == "14":
             badge = gb.get_badge_info(badge_id, count=10, auth_token=auth_token)
             print("Badge info", json.dumps(badge, indent=2))
+        
+        elif choice == "15":
+            universe_id = uni.get_game_universeId(place_id)
+            gameinfo = gi.get_gamepass_info(universe_id, count=100, auth_token=auth_token)
+            print(f"universe id : {universe_id}")
+            print("game's gamepass info :", json.dumps(gameinfo, indent=2))
 
         else:
             print("invalid option")

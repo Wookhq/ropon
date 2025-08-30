@@ -87,8 +87,8 @@ plus; goofy document
 | – game servers list                                  | ⬜     | `games.roblox.com/v1/games/{placeId}/servers/{type}`                          |
 | – game media (thumbs, trailers)                      | ⬜     | `games.roblox.com/v1/games/{universeId}/media`                                |
 | – votes/likes ratio                                  | ⬜     | `games.roblox.com/v1/games/votes?universeIds={ids}`                           |
-| – details (genre, visits, playing)                   | ⬜     | `games.roblox.com/v1/games?universeIds={ids}`                                 |
-| – thumbnails (multi-place)                           | ⬜     | `thumbnails.roblox.com/v1/games/multiget/thumbnails?universeIds={ids}&size=…` |
+| – details (genre, visits, playing)                   | ✅     | `games.roblox.com/v1/games?universeIds={ids}`                                 |
+| – thumbnails (multi-place)                           | ✅     | `thumbnails.roblox.com/v1/games/multiget/thumbnails?universeIds={ids}&size=…` |
 | – game updates info                                  | ⬜     | `develop.roblox.com/v2/universes/{universeId}/configuration`                  |
 
 ---
