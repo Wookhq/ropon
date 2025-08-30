@@ -27,6 +27,6 @@ class GroupWall:
 
             return response
         except requests.RequestException as e:
-            return {"error": f"Failed to fetch gameinfo : {e}"}
+            return {"error": f"Failed to fetch group wall : {e}"}
         except (KeyError, IndexError, ValueError) as e:
             return {"error": f"Invalid input or response: {str(e)}"}
