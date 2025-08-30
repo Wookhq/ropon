@@ -1,5 +1,8 @@
 <p align="center">
-  <img src="https://github.com/Wookhq/ropon/blob/main/images/Ropon%20icon.png?raw=true" alt="Logo" width="400"/>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://cdnchip.vercel.app/images/ropon/white.png">
+    <img src="https://cdnchip.vercel.app/images/ropon/black.png" alt="logo" width="400">
+  </picture>
 </p>
 
 # ropon
