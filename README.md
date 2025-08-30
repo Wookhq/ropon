@@ -40,9 +40,9 @@ plus; goofy document
 | inventory (UGC, accs, etc.)               | ✅     | `inventory.roblox.com/v2/users/{userId}/inventory/{assetType}`                                    |
 | gamepasses                                | ✅     | `inventory.roblox.com/v1/users/{userId}/game-passes`                                              |
 | badges                                    | ✅     | `badges.roblox.com/v1/users/{userId}/badges`                                                      |
-| badge earned date                         | ✅     | `badges.roblox.com/v1/users/{userId}/badges/awarded-dates`                                        |
+| badge earned date                         | ✅     | `badges.roblox.com/v1/users/{user_id}/badges/{badge_id}/earned`                                   |
 | emotes                                    | ✅     | `avatar.roblox.com/v1/users/{userId}/emotes`                                                      |
-| created games                             | ✅     | `games.roblox.com/v2/users/{userId}/games`                                                        |
+| created games                             | ✅     | `roblox.com/users/profile/playergames-json?userId={user_id}` no idea why diffrent api enpoint     |
 
 ---
 
@@ -110,7 +110,7 @@ plus; goofy document
 | members by role    | ⬜     | `groups.roblox.com/v1/groups/{groupId}/roles/{roleId}/users` |
 | user’s groups      | ⬜     | `groups.roblox.com/v2/users/{userId}/groups/roles`           |
 | group wall posts   | ✅     | `groups.roblox.com/v2/groups/{groupId}/wall/posts`           |
-| group shout        | ⬜     | `groups.roblox.com/v1/groups/{groupId}/shout`                |
+| group shout        | ⬜     |  same as group details                                       |
 | group social links | ⬜     | `groups.roblox.com/v1/groups/{groupId}/social-links`         |
 
 ---
