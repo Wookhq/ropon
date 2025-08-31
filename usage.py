@@ -1,3 +1,5 @@
+import sys
+sys.path.insert(0, "src")
 from ropon.apis.players.game import PlayerGamesCreation
 from ropon.apis.players.info import Player
 from ropon.apis.players.avatar import PlayerOutfit
