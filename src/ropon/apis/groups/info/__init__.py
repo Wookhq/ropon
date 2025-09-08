@@ -12,7 +12,7 @@ class GroupInfo:
         try:
             if group_id is None:
                 raise ValueError("group_id cannot be None")
-            if not isinstance(universe_id, int):
+            if not isinstance(group_id, int):
                 raise ValueError("group_id must be a interger")          
 
             headers = {".ROBLOSECURITY": self.auth_token} if self.auth_token else {}
@@ -34,7 +34,7 @@ class GroupInfo:
         try:
             if group_id is None:
                 raise ValueError("group_id cannot be None")
-            if not isinstance(universe_id, int):
+            if not isinstance(group_id, int):
                 raise ValueError("group_id must be a interger")          
 
             headers = {".ROBLOSECURITY": self.auth_token} if self.auth_token else {}
@@ -56,7 +56,7 @@ class GroupInfo:
         try:
             if group_id is None:
                 raise ValueError("group_id cannot be None")
-            if not isinstance(universe_id, int):
+            if not isinstance(group_id, int):
                 raise ValueError("group_id must be a interger")
             else:
                 cursorsearch = f"&cursor={cursor}"
