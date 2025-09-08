@@ -7,6 +7,9 @@
 
 # ropon
 
+> [!IMPORTANT]
+> Use something like Ro.py if you want some professtional kinda stuff, use ropon when you want something goofy or just want to support us
+
 A really simple and **very cool™** roblox api helper lib
 
 This only fetch stuff. this lib cant modify user account.
