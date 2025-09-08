@@ -9,12 +9,14 @@ class Player:
     @with_auth_token
     def get_player_info(self, user_id: int | None, history_usr_limit: str = '100',useroproxy: bool = True, **kwargs):
         try:
-            if self.auth_token and not useroproxy:
-                headers["Cookie"] = f".ROBLOSECURITY={self.auth_token}"
-            
-            headers = {".ROBLOSECURITY": self.auth_token} if self.auth_token else {}
+            headers = {}
+            if self.auth_token:
+                if not useroproxy:
+                    headers["Cookie"] = f".ROBLOSECURITY={self.auth_token}"
+                else:
+                    headers[".ROBLOSECURITY"] = self.auth_token
+                
             geninfo = requests.get(f"https://users.roblox.com/v1/users/{user_id}", headers=headers)
-
             username_history_response = requests.get(
                 f"https://users.roblox.com/v1/users/{user_id}/username-history?limit={history_usr_limit}&sortOrder=Asc",
                 headers=headers
