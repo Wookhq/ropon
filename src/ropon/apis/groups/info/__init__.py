@@ -52,7 +52,7 @@ class GroupInfo:
             return {"error": f"Invalid input or response: {str(e)}"}
     
     @with_auth_token
-    def get_group_members(self, group_id: int | None, cursor : str | None, **kwargs):
+    def get_group_members(self, group_id: int | None, cursor : str | None, count : int | None , **kwargs):
         try:
             if group_id is None:
                 raise ValueError("group_id cannot be None")
