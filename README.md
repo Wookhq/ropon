@@ -11,7 +11,12 @@ A really simple and **very cool™** roblox api helper lib
 
 This only fetch stuff. this lib cant modify user account.
 
-Usage :
+# install now.
+```bash
+pip install ropon
+```
+
+# Usage :
 
 ```python
 coming soon
