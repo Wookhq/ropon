@@ -38,6 +38,7 @@ plus; goofy document
 | old usernames                             | ✅     | `users.roblox.com/v1/users/{userId}/username-history`                                             |
 | outfits                                   | ✅     | `avatar.roblox.com/v1/users/{userId}/outfits`                                                     |
 | inventory (UGC, accs, etc.)               | ✅     | `inventory.roblox.com/v2/users/{userId}/inventory/{assetType}`                                    |
+| primary                                   | ✅     | `groups.roblox.com/v1/users/{user_id}/groups/primary/role`                                        |
 | gamepasses                                | ✅     | `inventory.roblox.com/v1/users/{userId}/game-passes`                                              |
 | badges                                    | ✅     | `badges.roblox.com/v1/users/{userId}/badges`                                                      |
 | badge earned date                         | ✅     | `badges.roblox.com/v1/users/{user_id}/badges/{badge_id}/earned`                                   |
